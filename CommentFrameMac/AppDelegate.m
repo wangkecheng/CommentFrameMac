@@ -18,7 +18,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
-     _homeWC = [[HomeWC alloc]initWithWindowNibName:@"HomeVC"]; 
+     _homeWC = [[HomeWC alloc]initWithWindowNibName:@"HomeWC"]; 
     [_homeWC.window orderFront:nil]; //前置显示窗口
 }
 
