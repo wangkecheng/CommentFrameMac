@@ -17,7 +17,8 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    //让显示的位置居于屏幕的中心
+    //[[_homeVC window] center]; 
 }
 
 @end
