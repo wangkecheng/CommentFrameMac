@@ -10,4 +10,18 @@
 
 @implementation Factory
 
++(NSString*)getHardwareUUID{//获取UUID
+    NSString *ret = nil;
+    io_service_t platformExpert ;
+    platformExpert = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("IOPlatformExpertDevice")) ;
+    if (platformExpert) {
+        CFTypeRef serialNumberAsCFString ;
+        serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, CFSTR("IOPlatformUUID"), kCFAllocatorDefault, 0) ;
+        if (serialNumberAsCFString) {
+            ret = (NSString*)CFBridgingRelease(serialNumberAsCFString);
+        }
+        IOObjectRelease(platformExpert);
+    }
+    return ret;
+}
 @end

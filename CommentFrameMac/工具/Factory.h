@@ -10,4 +10,5 @@
 
 @interface Factory : NSObject
 
++(NSString*)getHardwareUUID;//获取UUID;
 @end
